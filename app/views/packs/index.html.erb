@@ -1,4 +1,6 @@
 <% @packs.each do |pack|%>
-  <%=pack.name%><br>
-  <%=pack.description%>??<br>
+  <%=link_to pack.name, pack_path(pack)%><br>
+  <%=pack.description%>
+  <%=link_to "Edit", edit_pack_path(pack)%>
+  <%=link_to "Delete", pack_path(pack), :method => :delete %><br>
 <% end %>

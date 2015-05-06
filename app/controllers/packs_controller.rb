@@ -28,7 +28,7 @@ class PacksController < ApplicationController
   def update
     @pack = Pack.find(params[:id])
 
-    if @pack = Pack.update(pack_params)
+    if @pack.update( pack_params )
       redirect_to pack_path(@pack)
     else
       render :edit

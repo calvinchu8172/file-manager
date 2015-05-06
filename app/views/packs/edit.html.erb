@@ -1,0 +1,3 @@
+<%= form_for @pack, :url => pack_path(@pack), :method => :patch do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
