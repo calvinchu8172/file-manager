@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506143407) do
+ActiveRecord::Schema.define(version: 20150507064816) do
 
   create_table "packs", force: :cascade do |t|
-    t.string   "name",        null: false
+    t.string   "name",                        null: false
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "is_deleted",  default: false
   end
 
 end

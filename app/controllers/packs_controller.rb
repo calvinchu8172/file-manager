@@ -42,10 +42,38 @@ class PacksController < ApplicationController
     redirect_to packs_path
   end
 
+  def bulk_update
+    ids = Array(params[:ids])
+    packs = ids.map{ |i| Pack.find_by_id(i) }.compact
+
+      if params[:commit] == "Bulk_Delete"
+        packs.each do |e|
+          e.destroy
+        end
+      elsif params[:commit] == "Soft_Delete"
+        packs.each do |e|
+          e.set_delete
+        end
+      elsif params[:commit] == "Recover"
+        packs.each do |e|
+          e.reset_delete
+        end
+      elsif params[:commit] == "Bulk_Clone"
+        packs.each do |e|
+          b = e.dup
+          b.name = "dup_" + b.name
+          b.save
+        end
+      end
+
+    redirect_to packs_path
+  end
+
   private
 
   def pack_params
     params.require(:pack).permit(:name, :description)
+    params.require(:pack).permit(:name, :description, :is_deleted)
   end
 
 end
