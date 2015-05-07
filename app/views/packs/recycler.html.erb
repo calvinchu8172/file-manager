@@ -1,0 +1,16 @@
+<h1>資源回收桶</h1>
+<%= form_tag bulk_update_packs_path do %>
+<ul>
+  <% @packs.each do |pack| %>
+        <% if pack.is_deleted? %>
+        <%= check_box_tag "ids[]", pack.id, false %>
+        <%=link_to pack.name, pack_path(pack)%>
+        <%=link_to "Edit", edit_pack_path(pack)%>
+        <%=link_to "Delete", pack_path(pack), :method => :delete %><br>
+        <% end %>
+  <% end %>
+</ul>
+
+<%= submit_tag "Bulk_Delete" %>
+<%= submit_tag "Recover" %>
+<% end %>

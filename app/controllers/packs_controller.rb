@@ -42,6 +42,10 @@ class PacksController < ApplicationController
     redirect_to packs_path
   end
 
+  def recycler
+    @packs = Pack.all
+  end
+
   def bulk_update
     ids = Array(params[:ids])
     packs = ids.map{ |i| Pack.find_by_id(i) }.compact
@@ -72,7 +76,6 @@ class PacksController < ApplicationController
   private
 
   def pack_params
-    params.require(:pack).permit(:name, :description)
     params.require(:pack).permit(:name, :description, :is_deleted)
   end
 

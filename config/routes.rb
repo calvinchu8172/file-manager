@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   root "packs#index"
-  resources :packs
+  resources :packs do
+
+    collection do
+      post :bulk_update
+      get :recycler
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
