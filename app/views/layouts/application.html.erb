@@ -7,10 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to 'Index', packs_path %>
-<%= link_to 'New Pack', new_pack_path %>
-<%= link_to '資源回收桶', recycler_packs_path %>
-
+<%= render 'navbar' %>
 <%= yield %>
 
 </body>
