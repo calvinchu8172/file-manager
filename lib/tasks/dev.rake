@@ -3,7 +3,7 @@ namespace :dev do
   task :fake => :environment do
     Pack.delete_all
 
-    10.times do
+    30.times do
       Pack.create!( :name => Faker::App.name,
                     :description => Faker::Lorem.sentence
                   )

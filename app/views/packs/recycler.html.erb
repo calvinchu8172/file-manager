@@ -1,16 +1,33 @@
 <h1>資源回收桶</h1>
 <%= form_tag bulk_update_packs_path do %>
-<ul>
-  <% @packs.each do |pack| %>
-        <% if pack.is_deleted? %>
-        <%= check_box_tag "ids[]", pack.id, false %>
-        <%=link_to pack.name, pack_path(pack)%>
-        <%=link_to "Edit", edit_pack_path(pack)%>
-        <%=link_to "Delete", pack_path(pack), :method => :delete %><br>
-        <% end %>
-  <% end %>
-</ul>
 
-<%= submit_tag "Bulk_Delete" %>
-<%= submit_tag "Recover" %>
+<div class="row">
+  <div class="col-md-2">
+    <div class="list-group">
+      <%= submit_tag "Bulk_Delete", class:'btn btn-default' %>
+      <%= submit_tag "Recover", class:'btn btn-success' %>
+    </div>
+  </div>
+
+  <div class="col-md-10">
+    <div class="row">
+    <% @packs.each do |pack| %>
+      <div class="col-md-2">
+          <% if pack.is_deleted? %>
+          <div class="thumbnail">
+          <p><%= check_box_tag "ids[]", pack.id, false %></p>
+          <p>file No. <%= pack.id%>:</p>
+          <p><%=link_to pack.name, pack_path(pack)%></p>
+          <p>
+             <%=link_to "Edit", edit_pack_path(pack), class:'btn btn-primary btn-xs'%>
+             <%=link_to "Delete", pack_path(pack), :method => :delete, class:'btn btn-danger btn-xs' %>
+          </p>
+         </div>
+         <% end %>
+        </div>
+    <% end %>
+    </div>
+  </div>
+
+</div>
 <% end %>
