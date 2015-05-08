@@ -1,4 +1,4 @@
-<h2>修改檔案</h2>
+<h1><%=t("edit_pack")%></h1>
 <%= form_for @pack, :url => pack_path(@pack), :method => :patch do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>

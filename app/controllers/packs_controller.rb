@@ -50,22 +50,22 @@ class PacksController < ApplicationController
     ids = Array(params[:ids])
     packs = ids.map{ |i| Pack.find_by_id(i) }.compact
 
-      if params[:commit] == "Bulk_Delete"
+      if params[:commit] == I18n.t("Bulk_Delete")
         packs.each do |e|
           e.destroy
         end
-      elsif params[:commit] == "Soft_Delete"
+      elsif params[:commit] == I18n.t("Soft_Delete")
         packs.each do |e|
           e.set_delete
         end
-      elsif params[:commit] == "Recover"
+      elsif params[:commit] == I18n.t("Recover")
         packs.each do |e|
           e.reset_delete
         end
-      elsif params[:commit] == "Bulk_Clone"
+      elsif params[:commit] == I18n.t("Bulk_Clone")
         packs.each do |e|
           b = e.dup
-          b.name = "dup_" + b.name
+          b.name = I18n.t("dup_") + b.name
           b.save
         end
       end

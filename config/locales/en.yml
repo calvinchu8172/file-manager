@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home_page: "Home Page"
+  recycler: "Recycler"
+  Soft_Delete: "Throw to Recycler"
+  Bulk_Delete: "Directly Delete"
+  Bulk_Clone: "Select Clone"
+  Edit: "Edit"
+  Delete: "Delete"
+  Recover: "Recover"
+  dup_: "copy_"
+  edit_pack: "Edit file"
+  new_pack: "New file"
+
+  Pack_name: "File Name"
+  Description: "File Description"
+  Submit: "Submit"
+
+  File_Manager: "File Manager"
+  Pack: "File"

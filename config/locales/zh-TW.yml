@@ -1,0 +1,20 @@
+zh-TW:
+  language: "語系"
+  home_page: "首頁"
+  recycler: "資源回收桶"
+  Soft_Delete: "丟到資源回收桶"
+  Bulk_Delete: "直接刪除"
+  Bulk_Clone: "多選複製"
+  Edit: "編輯"
+  Delete: "刪除"
+  Recover: "復原"
+  dup_: "複製_"
+  edit_pack: "修改檔案"
+  new_pack: "新增檔案"
+
+  Pack_name: "檔案名稱"
+  Description: "檔案描述"
+  Submit: "提交"
+
+  File_Manager: "檔案管理員"
+  Pack: "檔案"

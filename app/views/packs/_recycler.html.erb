@@ -1,4 +1,4 @@
-<p>資源回收桶</p>
+<h2><%=t("recycler")%></h2>
 <%= form_tag bulk_update_packs_path do %>
 <ul>
   <% @packs.each do |pack| %>
@@ -6,13 +6,13 @@
         <p><%= check_box_tag "ids[]", pack.id, false %></p>
         <p><%=link_to pack.name, pack_path(pack)%></p>
         <p>
-        <%=link_to "Edit", edit_pack_path(pack), class:'btn btn-primary btn-xs' %>%>
-        <%=link_to "Delete", pack_path(pack), :method => :delete, class:'btn btn-danger btn-xs' %>
+        <%=link_to t("Edit"), edit_pack_path(pack), class:'btn btn-primary btn-xs' %>%>
+        <%=link_to t("Delete"), pack_path(pack), :method => :delete, class:'btn btn-danger btn-xs' %>
         </p>
         <% end %>
   <% end %>
 </ul>
 
-<%= submit_tag "Bulk_Delete" %>
-<%= submit_tag "Recover" %>
+<%= submit_tag t("Bulk_Delete") %>
+<%= submit_tag t("Recover") %>
 <% end %>

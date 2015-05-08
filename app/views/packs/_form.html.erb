@@ -1,5 +1,5 @@
-<%= f.label :name, "Name" %>
-<%= f.text_field :name, :placeholder => "Pack name" %><br>
-<%= f.label :description, "Description" %>
+<%= f.label :name, t("Pack_name") %>
+<%= f.text_field :name, :placeholder => t("Pack_name") %><br>
+<%= f.label :description, t("Description") %>
 <%= f.text_area :description %><br>
-<%= f.submit "Submit" %>
+<%= f.submit t("Submit") %>

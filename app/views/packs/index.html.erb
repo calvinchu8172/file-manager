@@ -1,12 +1,12 @@
-<h1>首頁</h1>
+<h1><%=t("home_page")%></h1>
 <%= form_tag bulk_update_packs_path do %>
 
 <div class="row">
   <div class="col-md-2">
     <div class="list-group">
-      <%= submit_tag "Soft_Delete", class:'btn btn-default' %>
-      <%= submit_tag "Bulk_Delete", class:'btn btn-default' %>
-      <%= submit_tag "Bulk_Clone", class:'btn btn-default' %>
+      <%= submit_tag t("Bulk_Clone"), class:'btn btn-primary' %><br><br>
+      <%= submit_tag t("Soft_Delete"), class:'btn btn-warning' %><br><br>
+      <%= submit_tag t("Bulk_Delete"), class:'btn btn-danger' %><br><br>
     </div>
   </div>
 
@@ -19,11 +19,11 @@
             <% unless pack.is_deleted? %>
               <div class="thumbnail">
                 <p><%= check_box_tag "ids[]", pack.id, false %></p>
-                <p>file No. <%= pack.id%>:</p>
+                <p><%= t("Pack")%> No. <%= pack.id%>:</p>
                 <p><%=link_to pack.name, pack_path(pack)%></p>
                 <p>
-                  <%=link_to "Edit", edit_pack_path(pack), class:'btn btn-primary btn-xs' %>
-                  <%=link_to "Delete", pack_path(pack), :method => :delete, class:'btn btn-danger btn-xs' %>
+                  <%=link_to t("Edit"), edit_pack_path(pack), class:'btn btn-primary btn-xs' %>
+                  <%=link_to t("Delete"), pack_path(pack), :method => :delete, class:'btn btn-danger btn-xs' %>
                 </p>
               </div>
             <% end %>
