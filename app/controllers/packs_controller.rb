@@ -1,7 +1,7 @@
 class PacksController < ApplicationController
 
   def index
-    @packs = Pack.all
+    @packs = Pack.where({ "is_deleted" => false })
   end
 
   def show
@@ -43,7 +43,7 @@ class PacksController < ApplicationController
   end
 
   def recycler
-    @packs = Pack.all
+    @packs = Pack.where({ "is_deleted" => true })
   end
 
   def bulk_update

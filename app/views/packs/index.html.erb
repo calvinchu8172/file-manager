@@ -16,7 +16,7 @@
     <div class="row">
       <% @packs.each do |pack| %>
           <div class="col-md-2">
-            <% unless pack.is_deleted? %>
+            <%# unless pack.is_deleted? %>
               <div class="thumbnail">
                 <p><%= check_box_tag "ids[]", pack.id, false %></p>
                 <p><%= t("Pack")%> No. <%= pack.id%>:</p>
@@ -26,7 +26,7 @@
                   <%=link_to t("Delete"), pack_path(pack), :method => :delete, class:'btn btn-danger btn-xs' %>
                 </p>
               </div>
-            <% end %>
+            <%# end %>
           </div>
       <% end %>
     </div>
